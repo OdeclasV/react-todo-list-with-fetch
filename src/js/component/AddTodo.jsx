@@ -13,7 +13,7 @@ export const AddTodo = () => {
 				return response.json();
 			})
 			.then(data => setListOfTodos(data));
-	}, []);
+	}, []); //empty array means it will only run once
 
 	const addTodoItem = e => {
 		if (e.key === "Enter" && e.target.value != "") {
@@ -27,9 +27,21 @@ export const AddTodo = () => {
 				headers: {
 					"Content-Type": "application/json"
 				}
-			})
-				.then(response => console.log(response))
-				.catch(error => console.error(error));
+			}).then(response => {
+				if (response.ok) {
+					fetch(
+						"https://assets.breatheco.de/apis/fake/todos/user/odeclasv"
+					)
+						.then(response => {
+							if (!response.ok) {
+								throw new Error(response.statusText);
+							}
+							return response.json();
+						})
+						.then(data => setListOfTodos(data))
+						.catch(error => console.error(error));
+				}
+			});
 		}
 	};
 
