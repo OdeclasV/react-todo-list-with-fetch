@@ -11,3 +11,39 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+.container-fluid {
+    width: 50%;
+    border: 2px solid black;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+}
+button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background: green;
+}
+
+.btn:hover{
+    color: white;
+}
+
+li {
+    width: 45%;
+}
+
+input {
+    margin-left: 25px;
+    margin-bottom: 30px;
+}
+
+.todoCounts {
+    margin-top: 50px;
+}
+
+.doneTask {
+    margin-bottom: 50px;
+}
+
+.list-group {
+    padding-left: 40%;
+}
